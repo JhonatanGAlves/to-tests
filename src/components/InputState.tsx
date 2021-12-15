@@ -99,7 +99,7 @@ const StyledInput = styled.div`
   }
 `
 
-const StyledExerciseInput = styled.div`
+export const StyledExerciseInput = styled.div`
   padding: 20px;
   border: 1px solid #747474;
   border-radius: 10px;

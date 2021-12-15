@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ListPerson from './components/data/ListPerson';
 import InputState, { ExerciseInputState } from './components/InputState';
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
       <InputState />
       <hr />
       <ExerciseInputState />
+      <hr />
+      <ListPerson />
     </div>
   );
 }
