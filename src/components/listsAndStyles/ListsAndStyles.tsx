@@ -4,6 +4,7 @@ import StylesInLine from './StylesInLine'
 import Stylesheet from './Stylesheet'
 import CSSModules from './CSSModules'
 import StyledComponents from './StyledComponents'
+import DinamicPropsToStyled from './dinamicProps/DinamicPropsToStyled'
 
 const ListsAndStyles = () => {
   return (
@@ -17,6 +18,8 @@ const ListsAndStyles = () => {
       </StyledExerciseInput>
       <StyledExerciseInput>
         <StyledComponents />
+        <hr />
+        <DinamicPropsToStyled />
       </StyledExerciseInput>
     </>
   )
