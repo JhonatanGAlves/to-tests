@@ -2,6 +2,7 @@ import React from 'react'
 import { StyledExerciseInput } from '../InputState'
 import StylesInLine from './StylesInLine'
 import Stylesheet from './Stylesheet'
+import CSSModules from './CSSModules'
 
 const ListsAndStyles = () => {
   return (
@@ -9,6 +10,8 @@ const ListsAndStyles = () => {
       <StylesInLine />
       <hr />
       <Stylesheet />
+      <hr />
+      <CSSModules />
     </StyledExerciseInput>
   )
 }
