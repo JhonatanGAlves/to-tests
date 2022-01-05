@@ -8,3 +8,5 @@ const ListsAndStyles = () => {
     </StyledExerciseInput>
   )
 }
+
+export default ListsAndStyles

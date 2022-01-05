@@ -3,6 +3,7 @@ import './App.css';
 import ListPerson from './components/data/ListPerson';
 import InputState, { ExerciseInputState } from './components/InputState';
 import ConditionalRendering from './components/ConditionalRendering';
+import ListsAndStyles from './components/listsAndStyles/ListsAndStyles';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <hr />
       <div className="App">
         <ConditionalRendering />
+        <hr />
+        <ListsAndStyles />
       </div>
     </>
   );
