@@ -4,13 +4,16 @@ import { StyledExerciseInput } from './InputState'
 
 const ConditionalRendering = () => {
   const [show, setShow] = useState(false)
+  const [frase, setFrase] = useState('Mostrar frase')
 
-  const handleShow = (e: any) => {
-    setShow(true)
-  }
-
-  const handleHide = (e: any) => {
-    setShow(false)
+  const handleShowHide = () => {
+    if (show) {
+      setShow(false)
+      setFrase('Mostrar frase')
+    } else {
+      setShow(true)
+      setFrase('Esconder frase')
+    }
   }
 
   return (
@@ -19,10 +22,7 @@ const ConditionalRendering = () => {
         <span>Esta frase foi exibida quando houve clique no botão abaixo!</span>
       }
       <StyledButton>
-        <button onClick={handleShow}>Mostrar frase</button>
-        {show &&
-          <button onClick={handleHide}>Esconder frase</button>
-        }
+        <button onClick={handleShowHide}>{frase}</button>
       </StyledButton>
     </StyledExerciseInput>
   )
