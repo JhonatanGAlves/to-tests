@@ -21,6 +21,11 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "components",
+    "data",
+    "listsAndStyles",
+    "CSSModules",
+    "dinamicProps"
   ]
 }
