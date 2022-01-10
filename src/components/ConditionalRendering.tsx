@@ -14,21 +14,16 @@ const ConditionalRendering = () => {
       {show &&
         <span>Esta frase foi exibida quando houve clique no botão abaixo!</span>
       }
-      <StyledButton>
-        <button onClick={handleClick}>{show ?
-          'Ocultar frase' :
-          'Mostrar frase'
-        }</button>
+      <StyledButton onClick={handleClick}>{show ?
+        'Ocultar frase' :
+        'Mostrar frase'
+      }
       </StyledButton>
     </StyledExerciseInput>
   )
 }
 
-const StyledButton = styled.div`
-  display: flex;
-  justify-content: center;
-  
-  button {
+export const StyledButton = styled.button`
     margin: 5px;
     padding: 5px 10px;
     border: 1px solid #747474;
@@ -36,12 +31,11 @@ const StyledButton = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     color: #747474;
-  }
 
-  button: hover {
-    color: #FFF;
-    background-color: #747474;
-    cursor: pointer;
+    &:hover {
+      color: #FFF;
+      background-color: #747474;
+      cursor: pointer;
   }
 `
 
