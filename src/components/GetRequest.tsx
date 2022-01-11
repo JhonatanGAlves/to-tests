@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { StyledExerciseInput } from './InputState'
 import { StyledButton } from './ConditionalRendering'
 import styled from 'styled-components'
+import imgLoading from '../assets/image/loading.svg'
 
 type Movie = {
   titulo: string,
@@ -11,6 +12,7 @@ type Movie = {
 const GetRequest = () => {
   const [movies, setMovies] = useState<Movie[]>([])
   const [change, setChange] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setChange(!change)
@@ -30,10 +32,12 @@ const GetRequest = () => {
   }*/
 
   const loadMovies = async () => { // async == haverá uma requisição e ela quer esperar as respostas para continuar.
+    setLoading(true)
     // await == o fetch só será armazenado em response quando a requisição for concluída.
     let response = await fetch('https://api.b7web.com.br/cinema/')
     // por conta do await o mesmo acontece com o let json, response.json() só será armazena quando response tiver tudo certo
     let json = await response.json()
+    setLoading(false)
     setMovies(json)
   }
 
@@ -43,6 +47,12 @@ const GetRequest = () => {
         Carregar Filmes
       </StyledButton>
       <h3>Total de filmes: {!change ? movies.length : ''}</h3>
+      {loading &&
+        <div style={{ padding: '100px' }}>
+          <h1 style={{ marginBottom: '20px' }}>Carregando...</h1>
+          <img src={imgLoading} />
+        </div>
+      }
       <StyledMovieList>
         {movies.map((movie, index) => (
           <div className='movie-list' key={index}>
