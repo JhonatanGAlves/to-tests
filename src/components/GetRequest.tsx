@@ -18,7 +18,8 @@ const GetRequest = () => {
 
   // fetch para fazer a requisição do tipo GET e o .then para pegar o resultado
   // e então retornar o resultado e executar com o .json()
-  const loadMovies = () => {
+
+  /*const loadMovies = () => {
     fetch('https://api.b7web.com.br/cinema/')
       .then((response) => {
         return response.json()
@@ -26,6 +27,14 @@ const GetRequest = () => {
       .then((json) => {
         setMovies(json)
       })
+  }*/
+
+  const loadMovies = async () => { // async == haverá uma requisição e ela quer esperar as respostas para continuar.
+    // await == o fetch só será armazenado em response quando a requisição for concluída.
+    let response = await fetch('https://api.b7web.com.br/cinema/')
+    // por conta do await o mesmo acontece com o let json, response.json() só será armazena quando response tiver tudo certo
+    let json = await response.json()
+    setMovies(json)
   }
 
   return (
