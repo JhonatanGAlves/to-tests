@@ -4,6 +4,7 @@ import ListPerson from './components/data/ListPerson';
 import InputState, { ExerciseInputState } from './components/InputState';
 import ConditionalRendering from './components/ConditionalRendering';
 import ListsAndStyles from './components/listsAndStyles/ListsAndStyles';
+import GetRequest from './components/GetRequest';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
         <ConditionalRendering />
         <hr />
         <ListsAndStyles />
+      </div>
+      <hr />
+      <div className="App">
+        <GetRequest />
       </div>
     </>
   );
