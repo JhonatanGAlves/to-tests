@@ -16,7 +16,7 @@ const GetRequest = () => {
 
   useEffect(() => {
     setChange(!change)
-  }, [movies])
+  }, [movies, change])
 
   // fetch para fazer a requisição do tipo GET e o .then para pegar o resultado
   // e então retornar o resultado e executar com o .json()
@@ -68,7 +68,7 @@ const GetRequest = () => {
       {loading &&
         <div style={{ padding: '100px' }}>
           <h1 style={{ marginBottom: '20px' }}>Carregando...</h1>
-          <img src={imgLoading} />
+          <img src={imgLoading} alt='img' />
         </div>
       }
       <StyledMovieList>
